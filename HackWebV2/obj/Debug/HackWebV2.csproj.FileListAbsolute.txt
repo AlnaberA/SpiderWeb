@@ -12,3 +12,4 @@ D:\Myfiles-Alaa\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.csproj.C
 D:\Myfiles-Alaa\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.csproj.CopyComplete
 D:\Myfiles-Alaa\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.exe
 D:\Myfiles-Alaa\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.pdb
+D:\Myfiles-Alaa\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.Main.resources
