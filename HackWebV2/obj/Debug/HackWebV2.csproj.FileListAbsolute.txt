@@ -28,3 +28,4 @@ D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.csproj.CoreCo
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.csproj.CopyComplete
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.exe
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.pdb
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.Menu_Tools.GetSourceForm.resources

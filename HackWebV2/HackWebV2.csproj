@@ -54,10 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelpMenu\AboutForm.cs">
+    <Compile Include="Menu_Help\AboutController.cs" />
+    <Compile Include="Menu_Help\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpMenu\AboutForm.Designer.cs">
+    <Compile Include="Menu_Help\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -66,10 +67,20 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_Tools\GetSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Tools\GetSourceForm.Designer.cs">
+      <DependentUpon>GetSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Tools\GetSourceController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Tools\GetSourceForm.resx">
+      <DependentUpon>GetSourceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

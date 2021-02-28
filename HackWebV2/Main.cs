@@ -1,4 +1,6 @@
 ﻿using Gecko;
+using HackWebV2.HelpMenu;
+using HackWebV2.Menu_Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +42,18 @@ namespace HackWebV2
         private void forwardBtn_Click(object sender, EventArgs e)
         {
             geckoWebBrowser.GoForward();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutController controller = new AboutController();
+            controller.showAboutSection();
+        }
+
+        private void getSourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetSourceController controller = new GetSourceController(geckoWebBrowser);
+            controller.showGetSourceDialog();
         }
     }
 }
