@@ -31,10 +31,9 @@ namespace HackWebV2.Menu_Tools
             if (geckoDomElement is GeckoHtmlElement)
             {
                 GeckoHtmlElement element = (GeckoHtmlElement)geckoDomElement;
-                var innerHtml = element.InnerHtml;
-                form.htmlView.Text = innerHtml;
+                var outerHtml = element.OuterHtml;
+                form.htmlView.Text = outerHtml;
             }
         }
-
     }
 }

@@ -19,6 +19,7 @@ namespace HackWebV2
         {
             InitializeComponent();
             Xpcom.Initialize("Firefox");
+            geckoWebBrowser.Navigate("https://www.duckduckgo.com");
         }
 
         private void urlEntry_KeyPress(object sender, KeyPressEventArgs e)
