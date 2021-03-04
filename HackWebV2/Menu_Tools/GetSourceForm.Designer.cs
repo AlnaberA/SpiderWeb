@@ -38,6 +38,7 @@ namespace HackWebV2.Menu_Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.htmlView.Location = new System.Drawing.Point(12, 12);
+            this.htmlView.MaxLength = 0;
             this.htmlView.Multiline = true;
             this.htmlView.Name = "htmlView";
             this.htmlView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

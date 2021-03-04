@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TidyManaged;
+
 
 namespace HackWebV2.Menu_Tools
 {
@@ -32,7 +34,17 @@ namespace HackWebV2.Menu_Tools
             {
                 GeckoHtmlElement element = (GeckoHtmlElement)geckoDomElement;
                 var outerHtml = element.OuterHtml;
-                form.htmlView.Text = outerHtml;
+
+                //Format html
+                using (Document htmlDoc = Document.FromString(outerHtml))
+                {
+                    htmlDoc.ShowWarnings = false;
+                    htmlDoc.Quiet = true;
+                    htmlDoc.OutputXhtml = true;
+                    htmlDoc.CleanAndRepair();
+                    string parsed = htmlDoc.Save();
+                    form.htmlView.Text = parsed;
+                }
             }
         }
     }

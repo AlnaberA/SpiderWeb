@@ -29,3 +29,6 @@ D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.csproj.CopyCo
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.exe
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.pdb
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.Menu_Tools.GetSourceForm.resources
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\tidy.x64.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\tidy.x86.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\TidyHTML5Managed.dll
