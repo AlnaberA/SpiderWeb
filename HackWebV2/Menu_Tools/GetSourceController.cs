@@ -32,7 +32,7 @@ namespace HackWebV2.Menu_Tools
             var geckoDomElement = geckoWebBrowser.Document.DocumentElement;
             if (geckoDomElement is GeckoHtmlElement)
             {
-                GeckoHtmlElement element = (GeckoHtmlElement)geckoDomElement;
+                var element = (GeckoHtmlElement)geckoDomElement;
                 var outerHtml = element.OuterHtml;
 
                 //Format html

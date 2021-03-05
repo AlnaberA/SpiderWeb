@@ -37,6 +37,7 @@ namespace HackWebV2.Menu_Tools
             this.htmlView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.htmlView.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.htmlView.Location = new System.Drawing.Point(12, 12);
             this.htmlView.MaxLength = 0;
             this.htmlView.Multiline = true;

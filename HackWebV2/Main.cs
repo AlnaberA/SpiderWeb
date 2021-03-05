@@ -20,6 +20,7 @@ namespace HackWebV2
             InitializeComponent();
             Xpcom.Initialize("Firefox");
             geckoWebBrowser.Navigate("https://www.duckduckgo.com");
+            setupProxy();
         }
 
         private void urlEntry_KeyPress(object sender, KeyPressEventArgs e)
@@ -55,6 +56,15 @@ namespace HackWebV2
         {
             GetSourceController controller = new GetSourceController(geckoWebBrowser);
             controller.showGetSourceDialog();
+        }
+
+        private void setupProxy()
+        {
+            /*            GeckoPreferences.Default["network.proxy.type"] = 1;
+                        GeckoPreferences.Default["network.proxy.http"] = proxyAddress.Host;
+                        GeckoPreferences.Default["network.proxy.http_port"] = proxyAddress.Port;
+                        GeckoPreferences.Default["network.proxy.ssl"] = proxyAddress.Host;
+                        GeckoPreferences.Default["network.proxy.ssl_port"] = proxyAddress.Port;*/
         }
     }
 }
