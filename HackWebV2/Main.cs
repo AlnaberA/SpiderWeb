@@ -21,7 +21,10 @@ namespace HackWebV2
             Xpcom.Initialize("Firefox");
             geckoWebBrowser.Navigate("https://www.duckduckgo.com");
             setupProxy();
+
+            testMethod();
         }
+
 
         private void urlEntry_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -65,6 +68,31 @@ namespace HackWebV2
                         GeckoPreferences.Default["network.proxy.http_port"] = proxyAddress.Port;
                         GeckoPreferences.Default["network.proxy.ssl"] = proxyAddress.Host;
                         GeckoPreferences.Default["network.proxy.ssl_port"] = proxyAddress.Port;*/
+        }
+
+
+        private void testMethod()
+        {
+            System.Diagnostics.Trace.WriteLine("testing.");
+
+            // Consume the dom changed event.
+            geckoWebBrowser.DomContentChanged += (sender, args) =>
+            {
+                System.Diagnostics.Trace.WriteLine("Dom has changed.");
+            };
+
+            // Consume the DomClick event.
+            geckoWebBrowser.DomClick += (sender, args) =>
+            {
+                System.Diagnostics.Trace.WriteLine("Dom clicked event called.");
+            };
+
+            geckoWebBrowser.UseHttpActivityObserver = true;
+            geckoWebBrowser.ObserveHttpModifyRequest += (sender, args) =>
+            {
+                System.Diagnostics.Trace.WriteLine("ObserveHttpModifyRequest event called.");
+            };
+            //https://stackoverflow.com/questions/22150216/how-to-check-single-url-webtraffic-in-c-sharp
         }
     }
 }
