@@ -18,16 +18,14 @@ namespace HackWebV2
 {
     public partial class Main : Form
     {
-        private static String cert = "";
-        private static String key = "";
         public Main()
         {
             InitializeComponent();
             Xpcom.Initialize("Firefox");
             geckoWebBrowser.Navigate("https://www.duckduckgo.com");
             setupProxy();
-
-            testMethod();
+            setupSecurityPrefences();
+            requestLogger();
         }
 
 
@@ -76,13 +74,16 @@ namespace HackWebV2
             GeckoPreferences.Default["network.proxy.ssl"] = "127.0.0.1";
             GeckoPreferences.Default["network.proxy.ssl_port"] = 8764;
 
+        }
+
+        private void setupSecurityPrefences()
+        {
             GeckoPreferences.User["security.enterprise_roots.enabled"] = true;
             GeckoPreferences.User["security.enterprise_roots.auto-enabled"] = true;
         }
 
-        private void testMethod()
+        private void requestLogger()
         {
-            System.Diagnostics.Trace.WriteLine("testing.");
             /*           
              *           
              *          https://stackoverflow.com/questions/17904789/using-fiddler-with-a-c-sharp-application-ipport-proxy
@@ -91,25 +92,13 @@ namespace HackWebV2
                         https://stackoverflow.com/questions/19238425/geckofx-22-by-pass-self-sign-cert
                         https://stackoverflow.com/questions/37511187/how-to-fix-gecko-29-0-error-sec-error-unknown-issuer-on-a-website
             */
-            /*            geckoWebBrowser.NSSError += (s, e) =>
-                        {
-                            if (e.Message.Contains("Certificate"))//Peer's Certificate issuer is not recognized.
-                                        {
-                                CertOverrideService.GetService().RememberValidityOverride(e.Uri, e.Certificate, CertOverride.Mismatch | CertOverride.Time | CertOverride.Untrusted, false);
-                                *//*if (!e.Uri.AbsoluteUri.Contains(".js") && !e.Uri.AbsoluteUri.Contains(".css")) geckoWebBrowser.Navigate(e.Uri.AbsoluteUri);*//*
-                                e.Handled = true;//otherwise shows error
-                                        }
-                        };*/
 
-            /*            InstallCertificate();
-                        FiddlerApplication.Prefs.SetStringPref("fiddler.certmaker.bc.key", key);
-                        FiddlerApplication.Prefs.SetStringPref("fiddler.certmaker.bc.cert", cert);*/
-            Gecko.CertOverrideService.GetService().ValidityOverride += geckoWebBrowser1_ValidityOverride;
-
+            // Fixes invalid certificate.
+            CertOverrideService.GetService().ValidityOverride += geckoWebBrowser_ValidityOverride;
             FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
             FiddlerApplication.Startup(8764, false, true);
         }
-        private void geckoWebBrowser1_ValidityOverride(object sender, Gecko.Events.CertOverrideEventArgs e)
+        private void geckoWebBrowser_ValidityOverride(object sender, Gecko.Events.CertOverrideEventArgs e)
         {
             e.OverrideResult = Gecko.CertOverride.Mismatch | Gecko.CertOverride.Time | Gecko.CertOverride.Untrusted;
             e.Temporary = true;
@@ -121,29 +110,9 @@ namespace HackWebV2
             System.Diagnostics.Trace.WriteLine(String.Format("REQ: {0}", oSession.url));
         }
 
-        public void Dispose()
+        public new void Dispose()
         {
             Fiddler.FiddlerApplication.Shutdown();
-        }
-
-        public static bool InstallCertificate()
-        {
-            if (!CertMaker.rootCertExists())
-            {
-                if (!CertMaker.createRootCert())
-                    return false;
-
-                if (!CertMaker.trustRootCert())
-                    return false;
-
-                // persist Fiddlers certificate into app specific config
-                cert =
-                   FiddlerApplication.Prefs.GetStringPref("fiddler.certmaker.bc.cert", null);
-                key =
-                   FiddlerApplication.Prefs.GetStringPref("fiddler.certmaker.bc.key", null);
-            }
-
-            return true;
         }
 
     }
