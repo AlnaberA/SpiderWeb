@@ -32,3 +32,8 @@ D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.Menu_Tools.Ge
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\tidy.x64.dll
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\tidy.x86.dll
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\TidyHTML5Managed.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\BasicFormatsForCore.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\BCMakeCert.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\CertMaker.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\FiddlerCore4.dll
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\FiddlerCore4.xml
