@@ -28,7 +28,6 @@ namespace HackWebV2
             requestLogger();
         }
 
-
         private void urlEntry_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -50,12 +49,6 @@ namespace HackWebV2
         private void forwardBtn_Click(object sender, EventArgs e)
         {
             geckoWebBrowser.GoForward();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutController controller = new AboutController();
-            controller.showAboutSection();
         }
 
         private void getSourceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,20 +77,12 @@ namespace HackWebV2
 
         private void requestLogger()
         {
-            /*           
-             *           
-             *          https://stackoverflow.com/questions/17904789/using-fiddler-with-a-c-sharp-application-ipport-proxy
-                        https://stackoverflow.com/questions/21029531/listen-to-browsers-requests
-                        https://stackoverflow.com/questions/22150216/how-to-check-single-url-webtraffic-in-c-sharp
-                        https://stackoverflow.com/questions/19238425/geckofx-22-by-pass-self-sign-cert
-                        https://stackoverflow.com/questions/37511187/how-to-fix-gecko-29-0-error-sec-error-unknown-issuer-on-a-website
-            */
-
             // Fixes invalid certificate.
             CertOverrideService.GetService().ValidityOverride += geckoWebBrowser_ValidityOverride;
             FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
             FiddlerApplication.Startup(8764, false, true);
         }
+
         private void geckoWebBrowser_ValidityOverride(object sender, Gecko.Events.CertOverrideEventArgs e)
         {
             e.OverrideResult = Gecko.CertOverride.Mismatch | Gecko.CertOverride.Time | Gecko.CertOverride.Untrusted;
@@ -112,8 +97,20 @@ namespace HackWebV2
 
         public new void Dispose()
         {
-            Fiddler.FiddlerApplication.Shutdown();
+            FiddlerApplication.Shutdown();
         }
 
+        #region menuItem_ClickEvents
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutController controller = new AboutController();
+            controller.showAboutSection();
+        }
+
+        private void networkLoggerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Move fiddler logger to a new datatable view.
+        }
+        #endregion
     }
 }

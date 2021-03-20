@@ -40,6 +40,7 @@ namespace HackWebV2
             this.getSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.networkLoggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -137,7 +138,8 @@ namespace HackWebV2
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.getSourceToolStripMenuItem});
+            this.getSourceToolStripMenuItem,
+            this.networkLoggerToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -145,7 +147,7 @@ namespace HackWebV2
             // getSourceToolStripMenuItem
             // 
             this.getSourceToolStripMenuItem.Name = "getSourceToolStripMenuItem";
-            this.getSourceToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.getSourceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getSourceToolStripMenuItem.Text = "Get Source";
             this.getSourceToolStripMenuItem.Click += new System.EventHandler(this.getSourceToolStripMenuItem_Click);
             // 
@@ -163,6 +165,13 @@ namespace HackWebV2
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // networkLoggerToolStripMenuItem
+            // 
+            this.networkLoggerToolStripMenuItem.Name = "networkLoggerToolStripMenuItem";
+            this.networkLoggerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.networkLoggerToolStripMenuItem.Text = "Network Logger";
+            this.networkLoggerToolStripMenuItem.Click += new System.EventHandler(this.networkLoggerToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -197,6 +206,7 @@ namespace HackWebV2
         private System.Windows.Forms.TextBox url;
         private Gecko.GeckoWebBrowser geckoWebBrowser;
         private System.Windows.Forms.ToolStripMenuItem getSourceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem networkLoggerToolStripMenuItem;
     }
 }
 
