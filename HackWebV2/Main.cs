@@ -1,6 +1,7 @@
 ﻿using Fiddler;
 using Gecko;
 using HackWebV2.HelpMenu;
+using HackWebV2.Menu_NetworkLogger;
 using HackWebV2.Menu_Tools;
 using System;
 using System.Collections.Generic;
@@ -109,7 +110,8 @@ namespace HackWebV2
 
         private void networkLoggerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: Move fiddler logger to a new datatable view.
+            NetworkLoggerController controller = new NetworkLoggerController();
+            controller.showNetworkLoggerSection();
         }
         #endregion
     }

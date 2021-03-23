@@ -26,7 +26,6 @@ namespace HackWebV2.Menu_Tools
             form.ShowDialog();
         }
 
-
         private void setupHTMLView()
         {
             var geckoDomElement = geckoWebBrowser.Document.DocumentElement;
