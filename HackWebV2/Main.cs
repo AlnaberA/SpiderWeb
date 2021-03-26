@@ -86,12 +86,12 @@ namespace HackWebV2
 
         private void geckoWebBrowser_ValidityOverride(object sender, Gecko.Events.CertOverrideEventArgs e)
         {
-            e.OverrideResult = Gecko.CertOverride.Mismatch | Gecko.CertOverride.Time | Gecko.CertOverride.Untrusted;
+            e.OverrideResult = CertOverride.Mismatch | CertOverride.Time | CertOverride.Untrusted;
             e.Temporary = true;
             e.Handled = true;
         }
 
-        private void FiddlerApplication_BeforeRequest(Fiddler.Session oSession)
+        private void FiddlerApplication_BeforeRequest(Session oSession)
         {
             System.Diagnostics.Trace.WriteLine(String.Format("REQ: {0}", oSession.url));
         }
