@@ -55,7 +55,7 @@ namespace HackWebV2
         private void getSourceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GetSourceController controller = new GetSourceController(geckoWebBrowser);
-            controller.showGetSourceDialog();
+            controller.showGetSource();
         }
 
         private void setupProxy()
@@ -111,7 +111,7 @@ namespace HackWebV2
         private void networkLoggerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NetworkLoggerController controller = new NetworkLoggerController();
-            controller.showNetworkLoggerSection();
+            controller.showNetworkLogger();
         }
         #endregion
     }

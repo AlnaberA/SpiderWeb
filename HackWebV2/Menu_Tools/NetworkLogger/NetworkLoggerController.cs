@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiddler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,15 @@ namespace HackWebV2.Menu_NetworkLogger
 {
     class NetworkLoggerController
     {
-        public void showNetworkLoggerSection()
+        NetworkLoggerForm form;
+        public NetworkLoggerController()
         {
-            NetworkLoggerForm networkLoggerForm = new NetworkLoggerForm();
-            networkLoggerForm.ShowDialog();
+            form = new NetworkLoggerForm();
+        }
+
+        public void showNetworkLogger()
+        {
+            form.Show();
         }
     }
 }

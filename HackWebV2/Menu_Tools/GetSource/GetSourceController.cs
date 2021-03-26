@@ -21,9 +21,9 @@ namespace HackWebV2.Menu_Tools
             setupHTMLView();
         }
 
-        public void showGetSourceDialog()
+        public void showGetSource()
         {
-            form.ShowDialog();
+            form.Show();
         }
 
         private void setupHTMLView()
