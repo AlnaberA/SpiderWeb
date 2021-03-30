@@ -80,7 +80,8 @@ namespace HackWebV2
         {
             // Fixes invalid certificate.
             CertOverrideService.GetService().ValidityOverride += geckoWebBrowser_ValidityOverride;
-            FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
+            //FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
+            FiddlerApplication.BeforeResponse += FiddlerApplication_BeforeResponse;
             FiddlerApplication.Startup(8764, false, true);
         }
 
@@ -94,6 +95,10 @@ namespace HackWebV2
         private void FiddlerApplication_BeforeRequest(Session oSession)
         {
             System.Diagnostics.Trace.WriteLine(String.Format("REQ: {0}", oSession.url));
+        }
+        private void FiddlerApplication_BeforeResponse(Session oSession)
+        {
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(oSession.ResponseBody));
         }
 
         public new void Dispose()
