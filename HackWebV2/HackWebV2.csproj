@@ -104,6 +104,9 @@
     <EmbeddedResource Include="Menu_Tools\GetSource\GetSourceForm.resx">
       <DependentUpon>GetSourceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Tools\NetworkLogger\NetworkLoggerForm.resx">
+      <DependentUpon>NetworkLoggerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

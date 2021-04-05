@@ -37,3 +37,4 @@ D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\BCMakeCert.dll
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\CertMaker.dll
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\FiddlerCore4.dll
 D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\bin\Debug\FiddlerCore4.xml
+D:\Myfiles\src\C# Projects\HackWebV2\HackWebV2\obj\Debug\HackWebV2.Menu_NetworkLogger.NetworkLoggerForm.resources

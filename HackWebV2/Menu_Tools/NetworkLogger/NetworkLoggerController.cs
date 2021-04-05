@@ -13,11 +13,21 @@ namespace HackWebV2.Menu_NetworkLogger
         public NetworkLoggerController()
         {
             form = new NetworkLoggerForm();
+            FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
+            FiddlerApplication.BeforeResponse += FiddlerApplication_BeforeResponse;
         }
 
         public void showNetworkLogger()
         {
             form.Show();
+        }
+        private void FiddlerApplication_BeforeRequest(Session oSession)
+        {
+            System.Diagnostics.Trace.WriteLine(String.Format("REQ: {0}", oSession.url));
+        }
+        private void FiddlerApplication_BeforeResponse(Session oSession)
+        {
+            System.Diagnostics.Trace.WriteLine(Encoding.UTF8.GetString(oSession.ResponseBody));
         }
     }
 }

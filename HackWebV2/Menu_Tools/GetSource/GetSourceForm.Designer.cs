@@ -29,29 +29,29 @@ namespace HackWebV2.Menu_Tools
         /// </summary>
         private void InitializeComponent()
         {
-            this.htmlView = new System.Windows.Forms.TextBox();
+            this.htmlSourceCode = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // htmlView
+            // htmlSourceCode
             // 
-            this.htmlView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.htmlSourceCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.htmlView.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.htmlView.Location = new System.Drawing.Point(12, 12);
-            this.htmlView.MaxLength = 0;
-            this.htmlView.Multiline = true;
-            this.htmlView.Name = "htmlView";
-            this.htmlView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.htmlView.Size = new System.Drawing.Size(1144, 715);
-            this.htmlView.TabIndex = 0;
+            this.htmlSourceCode.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.htmlSourceCode.Location = new System.Drawing.Point(12, 12);
+            this.htmlSourceCode.MaxLength = 0;
+            this.htmlSourceCode.Multiline = true;
+            this.htmlSourceCode.Name = "htmlSourceCode";
+            this.htmlSourceCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.htmlSourceCode.Size = new System.Drawing.Size(1144, 715);
+            this.htmlSourceCode.TabIndex = 0;
             // 
             // GetSourceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 739);
-            this.Controls.Add(this.htmlView);
+            this.Controls.Add(this.htmlSourceCode);
             this.Name = "GetSourceForm";
             this.Text = "GetSourceForm";
             this.ResumeLayout(false);
@@ -61,6 +61,6 @@ namespace HackWebV2.Menu_Tools
 
         #endregion
 
-        public System.Windows.Forms.TextBox htmlView;
+        public System.Windows.Forms.TextBox htmlSourceCode;
     }
 }

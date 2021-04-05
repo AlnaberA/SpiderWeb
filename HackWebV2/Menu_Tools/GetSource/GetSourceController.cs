@@ -42,7 +42,7 @@ namespace HackWebV2.Menu_Tools
                     htmlDoc.OutputXhtml = true;
                     htmlDoc.CleanAndRepair();
                     string parsed = htmlDoc.Save();
-                    form.htmlView.Text = parsed;
+                    form.htmlSourceCode.Text = parsed;
                 }
             }
         }
